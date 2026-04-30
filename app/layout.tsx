@@ -11,15 +11,17 @@ const volja = localFont({
   display: 'swap',
 });
 
+const bp = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export const metadata: Metadata = {
   title: "54 ОАБр — Вступай до лав",
   description: "54-та Окрема Артилерійська Бригада ЗСУ — Vis et Victoria.",
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: `${bp}/favicon-16x16.png`, sizes: '16x16', type: 'image/png' },
+      { url: `${bp}/favicon-32x32.png`, sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/apple-icon.png',
+    apple: `${bp}/apple-icon.png`,
   },
 };
 
