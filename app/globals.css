@@ -138,8 +138,8 @@ section{padding:5rem 2rem}
 .faq-item.open .faq-q{color:var(--gold)}
 .faq-arrow{font-size:1.1rem;color:var(--red-b);transition:transform .3s;flex-shrink:0}
 .faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--gold)}
-.faq-a{display:none;padding:0 1.75rem 1.5rem;border-top:1px solid rgba(200,168,75,.1)}
-.faq-item.open .faq-a{display:block}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .35s ease;padding:0 1.75rem}
+.faq-item.open .faq-a{max-height:600px;padding-bottom:1.5rem;border-top:1px solid rgba(200,168,75,.1)}
 .faq-a p{font-size:.9rem;color:var(--muted);line-height:1.85;margin-top:1rem}
 .faq-a p+p{margin-top:.75rem}
 
