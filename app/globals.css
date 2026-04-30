@@ -4,7 +4,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --gold:#e31325;
+  --gold:#f1cf00;
   --gold-d:#a0832e;
   --red:#8b1a1a;
   --red-b:#c0392b;
@@ -202,9 +202,12 @@ footer{background:rgba(6,1,1,0.45);border-top:1px solid rgba(200,168,75,.2);padd
   .hero-content{
     align-items:center !important;
     text-align:center !important;
-    padding:0 1.5rem !important;
+    padding:80px 1.5rem 0 !important;
   }
   .hero-content h1{
     text-align:center !important;
+  }
+  .glass-block{
+    padding:1.75rem 1.25rem !important;
   }
 }
