@@ -27,7 +27,6 @@ export default function Home() {
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
         }}>
           <div style={{
             position: 'absolute',
