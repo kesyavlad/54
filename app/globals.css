@@ -197,6 +197,7 @@ footer{background:rgba(6,1,1,0.45);border-top:1px solid rgba(200,168,75,.2);padd
 }
 @media(max-width:480px){
   .vac-grid{grid-template-columns:1fr}
+  .about-stats{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .hero-content{
