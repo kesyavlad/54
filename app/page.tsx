@@ -23,7 +23,7 @@ export default function Home() {
           position: 'absolute',
           inset: 0,
           zIndex: 0,
-          backgroundImage: `url('/dragon-bg.png')`,
+          backgroundImage: `url('${process.env.NEXT_PUBLIC_BASE_PATH}/dragon-bg.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top',
           backgroundRepeat: 'no-repeat',
