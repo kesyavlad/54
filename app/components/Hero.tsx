@@ -32,6 +32,7 @@ export default function Hero() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
+        width: '100%',
       }}
         className="hero-content"
       >
