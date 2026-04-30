@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <footer>
-      <Image src="/logo.png" alt="54 ОАБр" width={50} height={50} style={{ width: '50px', height: 'auto', objectFit: 'contain', marginBottom: '1rem' }} />
+      <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`} alt="54 ОАБр" width={50} height={50} style={{ width: '50px', height: 'auto', objectFit: 'contain', marginBottom: '1rem' }} />
       <div className="f-name">54-та Окрема Артилерійська Бригада</div>
       <div className="f-sub">Vis et Victoria · 17-й Армійський Корпус · Сухопутні Війська ЗСУ</div>
       <div className="f-links">

@@ -15,7 +15,7 @@ export default function Nav() {
   return (
     <nav>
       <div className="nav-logo">
-        <Image src="/logo.png" alt="54 ОАБр" width={36} height={36} />
+        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`} alt="54 ОАБр" width={36} height={36} />
         <p style={{ fontFamily: "'Russo One',sans-serif", fontSize: 'clamp(1rem,5vw,1rem)', fontWeight: 700, color: '#fff', letterSpacing: '.04em' }}>54 ОАБр
         </p>
       </div>

@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Background */}
       <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <Image
-          src="/hero.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/hero.png`}
           alt=""
           fill
           style={{ objectFit: 'cover', objectPosition: 'center top' }}
@@ -31,7 +31,7 @@ export default function Hero() {
       >
         {/* Chevron */}
         <Image
-          src="/logo.png"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo.png`}
           alt="54 ОАБр"
           width={200}
           height={200}
