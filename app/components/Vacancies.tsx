@@ -1,17 +1,23 @@
 'use client';
 
+import { useState } from 'react';
+
 const scrollToForm = () => {
   document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
 };
 
 const vacancies = [
-  { ico: '🎯', tag: 'Бойовий розрахунок', title: 'Навідник', desc: 'Наведення гармати на ціль, точне виконання вогневих завдань.' },
-  { ico: '🚁', tag: 'Технології', title: 'Оператор БпЛА', desc: 'Управління дронами для розвідки та коригування вогню.' },
-  { ico: '⚙️', tag: 'Техніка', title: 'Водій-механік', desc: 'Керування та обслуговування самохідних артилерійських систем.' },
-  { ico: '🏥', tag: 'Медицина', title: 'Медик', desc: 'Надання першої медичної допомоги та евакуація поранених.' },
+  { title: 'Навідник' },
+  { title: 'Оператор БпЛА', drone: true, desc: 'Управління дронами для розвідки та коригування вогню.' },
+  { title: 'Водій-механік' },
+  { title: 'Медик' },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function Vacancies() {
+  const [droneHovered, setDroneHovered] = useState(false);
+
   return (
     <section id="vacancies">
       <div className="container">
@@ -26,11 +32,31 @@ export default function Vacancies() {
 
         <div className="vac-grid">
           {vacancies.map((v) => (
-            <div key={v.title} className="vac-card" onClick={scrollToForm}>
-              <div className="vac-ico">{v.ico}</div>
-              <div className="vac-tag">{v.tag}</div>
-              <h3>{v.title}</h3>
-              <p>{v.desc}</p>
+            <div
+              key={v.title}
+              className={`vac-card${v.drone ? ' vac-card--drone' : ''}`}
+              onClick={scrollToForm}
+              onMouseEnter={v.drone ? () => setDroneHovered(true) : undefined}
+              onMouseLeave={v.drone ? () => setDroneHovered(false) : undefined}
+            >
+              {v.drone && (
+                <>
+                  <img src={`${basePath}/first.jpeg`} alt="" aria-hidden className="drone-img" style={{ opacity: droneHovered ? 0 : 1 }} />
+                  <img src={`${basePath}/second.jpeg`} alt="" aria-hidden className="drone-img" style={{ opacity: droneHovered ? 1 : 0 }} />
+                  <div className="drone-overlay" />
+                </>
+              )}
+              <div
+                className="drone-text"
+                style={v.drone ? { transform: droneHovered ? 'translateY(-1.5rem)' : 'translateY(0)' } : undefined}
+              >
+                <h3>{v.title}</h3>
+                {v.desc && (
+                  <p className="drone-desc" style={{ opacity: droneHovered ? 1 : 0, maxHeight: droneHovered ? '6rem' : '0' }}>
+                    {v.desc}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>
