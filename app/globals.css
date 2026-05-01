@@ -19,6 +19,7 @@ body{
   color:var(--text);
   line-height:1.6;
   background-color:#0a0101;
+  overflow-x:hidden;
 }
 
 /* NAV */
@@ -179,6 +180,27 @@ footer{background:rgba(6,1,1,0.45);border-top:1px solid rgba(200,168,75,.2);padd
 .soc-link{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(200,168,75,.2);color:var(--muted);text-decoration:none;transition:all .2s}
 .soc-link svg{width:18px;height:18px}
 .soc-link:hover{background:rgba(200,168,75,.1);border-color:var(--gold);color:var(--gold)}
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateX(70px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-card {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1), transform 0.55s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
 
 @media(max-width:900px){
   .vac-grid{grid-template-columns:repeat(2,1fr)}

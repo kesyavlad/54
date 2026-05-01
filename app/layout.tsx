@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+// import Sparks from "./components/Sparks";
+import ScrollRevealInit from "./components/ScrollRevealInit";
 
 const volja = localFont({
   src: [
@@ -38,7 +40,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollRevealInit />
+        {children}
+      </body>
     </html>
   );
 }
